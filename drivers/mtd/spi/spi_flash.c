@@ -1076,7 +1076,7 @@ static const struct spi_flash_info *spi_flash_read_id(struct spi_flash *flash)
 		}
 	}
 
-	printf("SF: unrecognized JEDEC id bytes: %02x, %02x, %02x\n",
+	printf("SF: unrecognized ####### JEDEC id bytes: %02x, %02x, %02x\n",
 	       id[0], id[1], id[2]);
 	return ERR_PTR(-ENODEV);
 }

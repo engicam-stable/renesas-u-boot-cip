@@ -57,9 +57,10 @@ const struct spi_flash_info spi_flash_ids[] = {
 #endif
 #ifdef CONFIG_SPI_FLASH_EON		/* EON */
 	{"en25q32b",	   INFO(0x1c3016, 0x0, 64 * 1024,    64, 0) },
-	{"en25q64",	   INFO(0x1c3017, 0x0, 64 * 1024,   128, SECT_4K) },
+	{"en25q64",	       INFO(0x1c3017, 0x0, 64 * 1024,   128, SECT_4K) },
+	{"en25qh64a",	   INFO(0x1c7017, 0x0, 64 * 1024,   128, SECT_4K) },
 	{"en25q128b",	   INFO(0x1c3018, 0x0, 64 * 1024,   256, 0) },
-	{"en25s64",	   INFO(0x1c3817, 0x0, 64 * 1024,   128, 0) },
+	{"en25s64",	       INFO(0x1c3817, 0x0, 64 * 1024,   128, 0) },
 #endif
 #ifdef CONFIG_SPI_FLASH_GIGADEVICE	/* GIGADEVICE */
 	{"gd25q16c",	   INFO(0xc84015, 0x0, 64 * 1024,    32, RD_FULL | WR_QPP | SECT_4K) },
