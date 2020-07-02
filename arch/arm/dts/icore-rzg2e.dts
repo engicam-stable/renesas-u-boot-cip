@@ -113,6 +113,12 @@
 		function = "sdhi0";
 		power-source = <3300>;
 	};
+
+	sdhi3_pins: sd3 {
+		groups = "sdhi3_data4", "sdhi3_ctrl";
+		function = "sdhi3";
+		power-source = <1800>;
+	};
 };
 
 &usb2_phy0 {
@@ -138,15 +144,22 @@
 	};
 };
 
+/* eMMC */
+&sdhi3 {
+	pinctrl-1 = <&sdhi3_pins>;
+	pinctrl-names = "default";
+	bus-width = <4>;
+	non-removable;
+	status = "okay";
+};
 
 &sdhi0 {
 	/* micro SD */
 	pinctrl-0 = <&sdhi0_pins>;
 	pinctrl-names = "default";
-    cap-sd-highspeed;
 	vmmc-supply = <&reg_3p3v>;
-	vqmmc-supply = <&vccq_sdhi0>;	
-    cd-gpios = <&gpio3 12 GPIO_ACTIVE_HIGH>;
+	vqmmc-supply = <&vccq_sdhi0>;
+    	cd-gpios = <&gpio3 12 GPIO_ACTIVE_HIGH>;
 	bus-width = <4>;
 	status = "okay";
 	max-frequency = <2000000>;
